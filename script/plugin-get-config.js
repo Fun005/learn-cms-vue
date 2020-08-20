@@ -9,7 +9,7 @@ const pluginsPath = path.resolve(__dirname, '../src/plugins')
 const templatePath = path.resolve(__dirname, './template/plugin-stage-config.js.ejs')
 
 // eslint-disable-next-line
-console.log(chalk.green('配置插件...'));
+console.log(chalk.green('配置插件...'))
 
 const template = fs.readFileSync(templatePath, 'utf8')
 const puginList = getAllPlugin(pluginsPath)

@@ -105,12 +105,12 @@ export async function checkIsAnimated({ file, fileUrl, fileType }) {
         let frames = 0
         for (let i = 0, len = arr.length - 9; i < len && frames < 2; ++i) {
           if (
-            arr[i] === 0x00
-            && arr[i + 1] === 0x21
-            && arr[i + 2] === 0xf9
-            && arr[i + 3] === 0x04
-            && arr[i + 8] === 0x00
-            && (arr[i + 9] === 0x2c || arr[i + 9] === 0x21)
+            arr[i] === 0x00 &&
+            arr[i + 1] === 0x21 &&
+            arr[i + 2] === 0xf9 &&
+            arr[i + 3] === 0x04 &&
+            arr[i + 8] === 0x00 &&
+            (arr[i + 9] === 0x2c || arr[i + 9] === 0x21)
           ) {
             frames++
           }

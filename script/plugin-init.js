@@ -23,7 +23,7 @@ const puginList = getAllPlugin(pluginsPath)
 async function asyncForEach(array, callback) {
   for (let index = 0; index < array.length; index++) {
     // eslint-disable-next-line
-    await callback(array[index], index, array);
+    await callback(array[index], index, array)
   }
 }
 
@@ -34,12 +34,14 @@ if (!shell.which('npm')) {
 }
 
 async function handler() {
-  const questions = [{
-    type: 'checkbox',
-    name: 'plugins',
-    choices: puginList.map(item => ({ name: item.name, value: item })),
-    message: '请选择需要初始化的插件\n',
-  }]
+  const questions = [
+    {
+      type: 'checkbox',
+      name: 'plugins',
+      choices: puginList.map(item => ({ name: item.name, value: item })),
+      message: '请选择需要初始化的插件\n',
+    },
+  ]
 
   const { plugins } = await inquirer.prompt(questions)
 
@@ -55,8 +57,8 @@ async function handler() {
     const keys = ['dependencies', 'devDependencies']
     let hasError = false
 
-    await asyncForEach(keys, async (key) => {
-      await asyncForEach(Object.keys(packageCtx[key]), async (pkg) => {
+    await asyncForEach(keys, async key => {
+      await asyncForEach(Object.keys(packageCtx[key]), async pkg => {
         const v1 = packageCtx[key][pkg]
         const v2 = projectPackage[key][pkg]
         if (v1 && v2) {
@@ -65,7 +67,7 @@ async function handler() {
           }
         }
         try {
-          await installDep(pkg, v1, projectPackage, (key === 'devDependencies'))
+          await installDep(pkg, v1, projectPackage, key === 'devDependencies')
         } catch (e) {
           hasError = true
           console.log(chalk.red(e.message))

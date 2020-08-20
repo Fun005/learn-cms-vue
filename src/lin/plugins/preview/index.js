@@ -9,7 +9,7 @@ previewImage.install = vue => {
   let instance = null
 
   // eslint-disable-next-line func-names
-  PreviewConstructor.prototype.close = function () {
+  PreviewConstructor.prototype.close = function() {
     this.data = []
     this.options = {}
     this.imageIndex = 0

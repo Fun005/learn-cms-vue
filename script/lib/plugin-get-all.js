@@ -31,7 +31,7 @@ function getPlugins(source) {
   const folders = fs.readdirSync(source)
   const pluginsList = []
 
-  folders.forEach((item) => {
+  folders.forEach(item => {
     const itemPath = path.join(source, item)
     if (!isPlugin(itemPath)) {
       return

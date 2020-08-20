@@ -227,8 +227,9 @@ export default {
       this.currentPage = page
       this.selectedTableData = JSON.parse(sessionStorage.getItem('selectedTableData'))
       this.currentData = this.tableData.filter(
-        (item, index) => index >= (this.currentPage - 1) * this.pagination.pageSize
-          && index < this.currentPage * this.pagination.pageSize,
+        (item, index) =>
+          index >= (this.currentPage - 1) * this.pagination.pageSize &&
+          index < this.currentPage * this.pagination.pageSize,
       ) // eslint-disable-line
       this.$emit('currentChange', page)
       // 已选中的数据打勾

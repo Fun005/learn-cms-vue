@@ -16,10 +16,11 @@ Vue.directive('ripple', {
       background = binding.value
     }
 
-    const isMobile = window.navigator.userAgent.match(/Mobile/) && window.navigator.userAgent.match(/Mobile/)[0] === 'Mobile'
+    const isMobile =
+      window.navigator.userAgent.match(/Mobile/) && window.navigator.userAgent.match(/Mobile/)[0] === 'Mobile'
     const event = isMobile ? 'touchstart' : 'click'
 
-    el.addEventListener(event, function (e) {
+    el.addEventListener(event, function(e) {
       // e.preventDefault()
       const button = el
       const rect = button.getBoundingClientRect()

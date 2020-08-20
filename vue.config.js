@@ -8,7 +8,7 @@ module.exports = {
   lintOnSave: true,
   productionSourceMap: false,
   // assetsDir: 'static',
-  chainWebpack: (config) => {
+  chainWebpack: config => {
     config.resolve.alias
       .set('@', resolve('src'))
       .set('lin', resolve('src/lin'))
@@ -19,8 +19,8 @@ module.exports = {
       .use('vue-loader')
       .loader('vue-loader')
       .end()
-      .use("vue-markdown-loader")
-      .loader('vue-markdown-loader/lib/markdown-compiler')     
+      .use('vue-markdown-loader')
+      .loader('vue-markdown-loader/lib/markdown-compiler')
   },
   configureWebpack: {
     resolve: {
@@ -36,7 +36,5 @@ module.exports = {
   },
   devServer: {},
   // node_modules依赖项es6语法未转换问题
-  transpileDependencies: [
-    'vuex-persist',
-  ],
+  transpileDependencies: ['vuex-persist'],
 }

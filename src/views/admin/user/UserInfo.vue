@@ -185,8 +185,8 @@ export default {
           } else {
             // 更新用户信息
             if (
-              this.form.email === this.info.email
-              && this.form.group_ids.sort().toString() === this.info.group_ids.sort().toString()
+              this.form.email === this.info.email &&
+              this.form.group_ids.sort().toString() === this.info.group_ids.sort().toString()
             ) {
               this.$emit('handleInfoResult', false)
               return
