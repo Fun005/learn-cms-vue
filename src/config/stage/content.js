@@ -1,4 +1,4 @@
-const contentRouter ={
+const contentRouter = {
   name: null,
   title: '期刊管理',
   type: 'folder',
@@ -14,8 +14,8 @@ const contentRouter ={
       filePath: 'views/content/List.vue',
       icon: 'iconfont tushuguanli',
       inNav: true,
-    }
-  ]
+    },
+  ],
 }
 
-export default contentRouter;
+export default contentRouter
