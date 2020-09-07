@@ -7,11 +7,20 @@ const contentRouter = {
   inNav: true,
   children: [
     {
-      name: 'List',
+      name: 'content',
       title: '内容管理',
       type: 'view',
       route: '/content/list',
       filePath: 'views/content/List.vue',
+      icon: 'iconfont tushuguanli',
+      inNav: true,
+    },
+    {
+      name: 'flow',
+      title: '期刊管理',
+      type: 'view',
+      route: '/content/flow',
+      filePath: 'views/content/Flow.vue',
       icon: 'iconfont tushuguanli',
       inNav: true,
     },
